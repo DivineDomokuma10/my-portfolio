@@ -3,7 +3,7 @@ import React,{useRef,useEffect,useState} from 'react'
 import '../assets/animation.css'
 import {FaFacebook,FaWhatsappSquare,FaGithub,FaLinkedin,FaEnvelope,FaPhone} from 'react-icons/fa'
 
-const Home = () => {
+const Home = ({write}) => {
   const [first, setfirst] = useState('')
   let e = 0;
   let i = 0;
@@ -11,7 +11,7 @@ const Home = () => {
   let isComplete = false;
   let skill = '';
   const skills = [ 'Frontend Developer','Freelancer','Ui/Ux Designer']
-  useEffect(() => () => setInterval(() => insertSkill(), 350), [])
+  setInterval(() => insertSkill(), 350)
 
   
   const insertSkill = () => {
