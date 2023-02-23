@@ -1,7 +1,6 @@
 
 import React,{useRef,useLayoutEffect,useState} from 'react'
 import '../assets/animation.css'
-import test from '../module/test'
 import {FaFacebook,FaWhatsappSquare,FaGithub,FaLinkedin,FaEnvelope,FaPhone} from 'react-icons/fa'
 
 const Home = ({write}) => {
