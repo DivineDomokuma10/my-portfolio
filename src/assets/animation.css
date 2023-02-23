@@ -1,0 +1,16 @@
+.insertion{
+    animation-name: insert;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+}
+
+@keyframes insert {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+
+}

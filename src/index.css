@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Trebuchet MS';
+  transition-duration: .2s;
+}
+
+.home-icons{
+  @apply text-gray-300 text-xl cursor-pointer hover:text-white text-opacity-80 md:text-2xl
+}
+.not-drop-down{
+  transition-duration: .4s;
+  @apply
+  w-full justify-between bg-red-500 flex items-center py-2 px-7 fixed top-11 -left-full bg-opacity-[0.99]
+  md:static md:w-2/6 md:text-sm md:font-bold md:bg-transparent
+}
+.drop-down{
+  transition-duration: .4s;
+  @apply 
+  w-full justify-between bg-red-500 flex items-center py-2 px-7 fixed top-11 left-0 bg-opacity-[0.99]
+  md:static md:w-2/6 md:text-sm md:font-bold md:bg-transparent
+}
+
