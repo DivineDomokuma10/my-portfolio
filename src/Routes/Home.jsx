@@ -1,6 +1,7 @@
 
-import React,{useRef,useEffect,useState} from 'react'
+import React,{useRef,useLayoutEffect,useState} from 'react'
 import '../assets/animation.css'
+import test from '../module/test'
 import {FaFacebook,FaWhatsappSquare,FaGithub,FaLinkedin,FaEnvelope,FaPhone} from 'react-icons/fa'
 
 const Home = ({write}) => {
@@ -11,44 +12,44 @@ const Home = ({write}) => {
   let isComplete = false;
   let skill = '';
   const skills = [ 'Frontend Developer','Freelancer','Ui/Ux Designer']
-  write.setState(true)
+  useLayoutEffect(() => {
+    setInterval(() => insertSkill(), 300);
+  }, [])
+  
   
   
   const insertSkill = () => {
-    setInterval(() => {
-      
-      const test = text => setfirst(first + text)
-  
-      if(i < skills.length){
-        let curSkill = skills[i];
-        if(e < curSkill.length && isComplete === false){
-          skill += curSkill[e]
-          test(skill)
-          e++
-          if (e === curSkill.length) {
-            isComplete = true;
-            canDelete = true;
-          }
+    const test = text => setfirst(first + text)
+
+    if(i < skills.length){
+      let curSkill = skills[i];
+      if(e < curSkill.length && isComplete === false){
+        skill += curSkill[e]
+        test(skill)
+        e++
+        if (e === curSkill.length) {
+          isComplete = true;
+          canDelete = true;
         }
-        else if(e !== 0 && canDelete === true){
-          skill = skill.slice(0,e - 2);
-          test(skill)
-          e--
-        }
-        else{
-          isComplete = false;
-          canDelete = false;
-          i++;
-        }
-  
+      }
+      else if(e !== 0 && canDelete === true){
+        skill = skill.slice(0,e - 2);
+        test(skill)
+        e--
       }
       else{
-        i = 0
+        isComplete = false;
+        canDelete = false;
+        i++;
       }
-      
-    }, 350);
+
+    }
+    else{
+      i = 0
+    }
+    
   }
-  write.state && insertSkill();
+ 
 
   return (
     <div className='w-full h-[87.3vh] mt-[84px]'>

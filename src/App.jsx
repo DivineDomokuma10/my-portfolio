@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className='w-screen overflow-hidden bg-black relative'>
       <Nav/>
-      <div className='flex bg-white absolute z-20 right-0 top-1/2'>
+      <div className=' bg-white absolute z-20 right-0 top-1/2 hidden'>
         <span>
           <FaCog />
         </span>
