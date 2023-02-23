@@ -12,8 +12,7 @@ const Home = ({write}) => {
   let skill = '';
   const skills = [ 'Frontend Developer','Freelancer','Ui/Ux Designer']
   write.setState(true)
-  write.state && insertSkill();
-
+  
   
   const insertSkill = () => {
     setInterval(() => {
@@ -49,6 +48,7 @@ const Home = ({write}) => {
       
     }, 350);
   }
+  write.state && insertSkill();
 
   return (
     <div className='w-full h-[87.3vh] mt-[84px]'>
