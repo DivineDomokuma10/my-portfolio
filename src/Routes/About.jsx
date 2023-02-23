@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 
 const About = () => {
-  useEffect(() =>  () => console.log('About has mounted'), [])
+  write.setState(false)
   
   return (
     <div className='mt-[85px]'>About</div>

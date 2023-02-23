@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import { FaCog } from "react-icons/fa";
 
 const App = () => {
+  const [write, setWrite] = useState(false)
   return (
     <div className='w-screen overflow-hidden bg-black relative'>
       <Nav/>
@@ -26,10 +27,10 @@ const App = () => {
         </div>
       </div>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='about' element={<About/>}/>
-        <Route path='portfolio' element={<Portfolio/>}/>
-        <Route path='contact' element={<Contact/>}/>
+        <Route path='/' element={<Home write={{state: write, setState: setWrite}}/>}/>
+        <Route path='about' element={<About write={{state: write, setState: setWrite}}/>}/>
+        <Route path='portfolio' element={<Portfolio write={{state: write, setState: setWrite}}/>}/>
+        <Route path='contact' element={<Contact write={{state: write, setState: setWrite}}/>}/>
       </Routes>
     </div>
   )

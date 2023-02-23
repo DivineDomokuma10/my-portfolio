@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 
 const Contact = () => {
-  useEffect(() =>  () => console.log('Contact has mounted'), [])
+  write.setState(false)
   return (
     <div className='mt-[85px]'>Contact</div>
   )

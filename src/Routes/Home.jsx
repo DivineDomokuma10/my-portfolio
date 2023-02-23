@@ -11,40 +11,43 @@ const Home = ({write}) => {
   let isComplete = false;
   let skill = '';
   const skills = [ 'Frontend Developer','Freelancer','Ui/Ux Designer']
-  setInterval(() => insertSkill(), 350)
+  write.setState(true)
+  write.state && insertSkill();
 
   
   const insertSkill = () => {
-
-    const test = text => setfirst(first + text)
-
-    if(i < skills.length){
-      let curSkill = skills[i];
-      if(e < curSkill.length && isComplete === false){
-        skill += curSkill[e]
-        test(skill)
-        e++
-        if (e === curSkill.length) {
-          isComplete = true;
-          canDelete = true;
+    setInterval(() => {
+      
+      const test = text => setfirst(first + text)
+  
+      if(i < skills.length){
+        let curSkill = skills[i];
+        if(e < curSkill.length && isComplete === false){
+          skill += curSkill[e]
+          test(skill)
+          e++
+          if (e === curSkill.length) {
+            isComplete = true;
+            canDelete = true;
+          }
         }
-      }
-      else if(e !== 0 && canDelete === true){
-        skill = skill.slice(0,e - 2);
-        test(skill)
-        e--
+        else if(e !== 0 && canDelete === true){
+          skill = skill.slice(0,e - 2);
+          test(skill)
+          e--
+        }
+        else{
+          isComplete = false;
+          canDelete = false;
+          i++;
+        }
+  
       }
       else{
-        isComplete = false;
-        canDelete = false;
-        i++;
+        i = 0
       }
-
-    }
-    else{
-      i = 0
-    }
-    
+      
+    }, 350);
   }
 
   return (

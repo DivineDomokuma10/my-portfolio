@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 
 const Portfolio = () => {
-  useEffect(() =>  () => console.log('Portfolio has mounted'), [])
+  write.setState(false)
   return (
     <div className='mt-[85px]'>Portfolio</div>
   )
