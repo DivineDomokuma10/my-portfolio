@@ -1,10 +1,11 @@
 
-import React,{useRef,useLayoutEffect,useState} from 'react'
+import React,{useLayoutEffect,useState} from 'react'
 import '../assets/animation.css'
+import { showThemer } from '../assets/modules'
 import {FaFacebook,FaWhatsappSquare,FaGithub,FaLinkedin,FaEnvelope,FaPhone} from 'react-icons/fa'
 
-const Home = ({write}) => {
-  const [first, setfirst] = useState('')
+const Home = ({themeShow}) => {
+  const [skillTest, setskillTest] = useState('')
   let e = 0;
   let i = 0;
   let canDelete = false;
@@ -12,13 +13,14 @@ const Home = ({write}) => {
   let skill = '';
   const skills = [ 'Frontend Developer','Freelancer','Ui/Ux Designer']
   useLayoutEffect(() => {
+    showThemer(themeShow.state,themeShow.setState,false)
     setInterval(() => insertSkill(), 300);
   }, [])
   
   
   
   const insertSkill = () => {
-    const test = text => setfirst(first + text)
+    const test = text => setskillTest(skillTest + text)
 
     if(i < skills.length){
       let curSkill = skills[i];
@@ -65,7 +67,7 @@ const Home = ({write}) => {
           </h1>
           <div className='flex justify-center items-center space-x-2'>
             <span className='text-white font-sans text-2xl font-thin text-opacity-80'>I'm a</span> 
-            <span className={`font-sans text-xl font-thin ${'text-red-500'} md:text-2xl`}>{first}</span>
+            <span className={`font-sans text-xl font-thin ${'text-red-500'} md:text-2xl`}>{skillTest}</span>
             <span className='insertion w-[2px] h-9 bg-gray-400 bg-opacity-90'></span>  
           </div>
         </div>

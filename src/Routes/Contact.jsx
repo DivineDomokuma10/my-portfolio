@@ -1,7 +1,9 @@
-import React,{useEffect} from 'react'
+import React,{useLayoutEffect} from 'react'
+import { showThemer } from '../assets/modules'
 
-const Contact = () => {
-  write.setState(false)
+const Contact = ({themeShow}) => {
+  useLayoutEffect(() => showThemer(themeShow.state,themeShow.setState,true), [])
+
   return (
     <div className='mt-[85px]'>Contact</div>
   )
